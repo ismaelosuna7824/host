@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using RecyclameV2.Clases;
 using System.Data.SqlClient;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace RecyclameV2
 {
@@ -19,14 +19,13 @@ namespace RecyclameV2
         public FrmClientes()
         {
             InitializeComponent();
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
             lblAlta.Text =  DateTime.Now.ToString("dd/MM/yyyy");
             txtNombres.Focus();
-
-
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -36,7 +35,7 @@ namespace RecyclameV2
 
         private void metroTabPage1_Click(object sender, EventArgs e)
         {
-
+            int i = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -203,6 +202,19 @@ namespace RecyclameV2
         private void txtPais_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string strTab = metroTabControl1.SelectedTab.Text;
+            switch (strTab)
+            {
+                case "Listado Clientes":
+                    buscarClientes(txtBuscar.Text);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
