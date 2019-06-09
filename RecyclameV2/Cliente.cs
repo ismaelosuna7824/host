@@ -212,7 +212,7 @@ namespace RecyclameV2
                 Nombre = row["Nombre"].ToString();
                 ApellidoMaterno = row["ApeMaterno"].ToString();
                 ApellidoPaterno = row["ApePaterno"].ToString();
-                Domicilio = row["Domicilio"].ToString();
+                //Domicilio = row["Domicilio"].ToString();
                 Localidad = row["Localidad"].ToString();
                 Ciudad = row["Ciudad"].ToString();
                 if (row["FechaAlta"] != null)
