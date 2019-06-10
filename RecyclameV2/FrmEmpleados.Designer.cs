@@ -81,6 +81,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnEliminarEmpleado = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnEditarEmpleado = new System.Windows.Forms.Button();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
             this.txtBuscarEmpleado = new MetroFramework.Controls.MetroTextBox();
@@ -107,6 +110,7 @@
             this.metroTabControl1.Size = new System.Drawing.Size(972, 480);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
+            this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
             // 
             // metroTabPage1
             // 
@@ -814,7 +818,7 @@
             this.dtNacimiento.CustomFormat = "dd/MM/yyyy";
             this.dtNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNacimiento.Location = new System.Drawing.Point(110, 115);
-            this.dtNacimiento.MinimumSize = new System.Drawing.Size(4, 29);
+            this.dtNacimiento.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(213, 29);
             this.dtNacimiento.TabIndex = 128;
@@ -831,7 +835,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(314, 24);
+            this.metroLabel1.Location = new System.Drawing.Point(328, 30);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(15, 19);
@@ -1032,6 +1036,9 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.label3);
+            this.metroTabPage2.Controls.Add(this.btnEliminarEmpleado);
+            this.metroTabPage2.Controls.Add(this.label2);
             this.metroTabPage2.Controls.Add(this.btnEditarEmpleado);
             this.metroTabPage2.Controls.Add(this.metroLabel29);
             this.metroTabPage2.Controls.Add(this.txtBuscarEmpleado);
@@ -1047,6 +1054,41 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(529, 351);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 24);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Eliminar";
+            // 
+            // btnEliminarEmpleado
+            // 
+            this.btnEliminarEmpleado.BackgroundImage = global::RecyclameV2.Properties.Resources.borrarempleados;
+            this.btnEliminarEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnEliminarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarEmpleado.Location = new System.Drawing.Point(521, 286);
+            this.btnEliminarEmpleado.Name = "btnEliminarEmpleado";
+            this.btnEliminarEmpleado.Size = new System.Drawing.Size(92, 76);
+            this.btnEliminarEmpleado.TabIndex = 12;
+            this.btnEliminarEmpleado.UseVisualStyleBackColor = true;
+            this.btnEliminarEmpleado.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(300, 351);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 24);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Actualizar";
             // 
             // btnEditarEmpleado
             // 
@@ -1207,5 +1249,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Button btnEditarEmpleado;
         private MetroFramework.Controls.MetroLabel metroLabel29;
+        private System.Windows.Forms.Button btnEliminarEmpleado;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

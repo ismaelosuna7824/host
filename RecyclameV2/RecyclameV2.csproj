@@ -160,6 +160,12 @@
     <Compile Include="Formularios\FrmBusqueda.Designer.cs">
       <DependentUpon>FrmBusqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmBusqueda.resx">
       <DependentUpon>FrmBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
@@ -503,6 +512,9 @@
     <Content Include="bin\Debug\ru\DevExpress.XtraVerticalGrid.v14.2.resources.dll" />
     <Content Include="bin\Debug\ru\DevExpress.XtraWizard.v14.2.resources.dll" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\borrarclientes.png" />
+    <None Include="Resources\editarclientes.png" />
+    <None Include="Resources\borrarempleados.png" />
     <None Include="Resources\editarempleado24.png" />
     <None Include="Resources\ediatrempleados.png" />
     <None Include="Resources\RecyclameLogo.png" />

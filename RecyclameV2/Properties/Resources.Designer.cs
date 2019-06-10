@@ -83,6 +83,26 @@ namespace RecyclameV2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap borrarclientes {
+            get {
+                object obj = ResourceManager.GetObject("borrarclientes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap borrarempleados {
+            get {
+                object obj = ResourceManager.GetObject("borrarempleados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap company_22169 {
             get {
                 object obj = ResourceManager.GetObject("company_22169", resourceCulture);
@@ -116,6 +136,16 @@ namespace RecyclameV2.Properties {
         internal static System.Drawing.Bitmap ediatrempleados {
             get {
                 object obj = ResourceManager.GetObject("ediatrempleados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editarclientes {
+            get {
+                object obj = ResourceManager.GetObject("editarclientes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

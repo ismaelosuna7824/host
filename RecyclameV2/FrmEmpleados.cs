@@ -18,6 +18,7 @@ namespace RecyclameV2
         public FrmEmpleados()
         {
             InitializeComponent();
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -172,6 +173,67 @@ namespace RecyclameV2
                     //eliminarEmpleado(rowHandle);
                 }
             }
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string strTab = metroTabControl1.SelectedTab.Text;
+            switch (strTab)
+            {
+                case "Listado Empleados":
+                    buscarEmpleados(txtBuscarEmpleado.Text);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (gridView1.SelectedRowsCount > 0)
+            {
+                int rowHandle = gridView1.GetSelectedRows()[0];
+                eliminarEmpleado(rowHandle);
+            }
+        }
+        private bool eliminarEmpleado(int rowHandle)
+        {
+            Empleado empleado = (Empleado)gridView1.GetRow(rowHandle);
+            if (empleado != null)
+            {
+                string nombrecompleto = empleado.Nombre;
+                if (empleado.ApellidoPaterno.Length > 0)
+                {
+                    if (nombrecompleto.Length > 0)
+                    {
+                        nombrecompleto += " " + empleado.ApellidoPaterno;
+                    }
+                }
+                if (empleado.ApellidoMaterno.Length > 0)
+                {
+                    nombrecompleto += " " + empleado.ApellidoMaterno;
+                }
+                if (empleado.Activo)
+                {
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show(this, "¿Estás seguro de eliminar al empleado " + nombrecompleto + "?", this.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        if (empleado.Borrar())
+                        {
+                            empleado.Activo = false;
+                            empleado.Status = "Eliminado";
+                            //gridView1.DeleteRow(rowHandle);
+                            gridView1.RefreshData();
+                            return true;
+                        }
+                    }
+                }
+                else
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(this, "El empleado " + nombrecompleto + " ya ha sido dado de baja.", this.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            return false;
         }
     }
 }

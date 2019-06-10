@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using RecyclameV2.Clases;
 using System.Data.SqlClient;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace RecyclameV2
 {
@@ -19,14 +19,13 @@ namespace RecyclameV2
         public FrmClientes()
         {
             InitializeComponent();
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void FrmClientes_Load(object sender, EventArgs e)
         {
             lblAlta.Text =  DateTime.Now.ToString("dd/MM/yyyy");
             txtNombres.Focus();
-
-
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -36,7 +35,7 @@ namespace RecyclameV2
 
         private void metroTabPage1_Click(object sender, EventArgs e)
         {
-
+            int i = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -203,6 +202,115 @@ namespace RecyclameV2
         private void txtPais_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string strTab = metroTabControl1.SelectedTab.Text;
+            switch (strTab)
+            {
+                case "Listado Clientes":
+                    buscarClientes(txtBuscar.Text);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            if (gridView1.SelectedRowsCount > 0)
+            {
+                int rowHandle = gridView1.GetSelectedRows()[0];
+                editarCliente(rowHandle);
+            }
+        }
+        private bool editarCliente(int rowHandle)
+        {
+            Cliente cliente = (Cliente)gridView1.GetRow(rowHandle);
+            if (cliente != null)
+            {
+                if (cliente.Activo)
+                {
+                    frmCliente fcliente = new frmCliente(cliente);
+                    if (fcliente.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        cliente = fcliente.obtenerCliente();
+                        gridView1.RefreshRow(rowHandle);
+                        return true;
+                    }
+                }
+                else
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(this, "No se puede editar el cliente porque ha sido dado de baja.\r\nfavor de seleccionar un cliente que esté activo.", this.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void btnEiminarCliente_Click(object sender, EventArgs e)
+        {
+            if (gridView1.SelectedRowsCount > 0)
+            {
+                int rowHandle = gridView1.GetSelectedRows()[0];
+                eliminarCliente(rowHandle);
+            }
+        }
+        private bool eliminarCliente(int rowHandle)
+        {
+            Cliente cliente = (Cliente)gridView1.GetRow(rowHandle);
+            if (cliente != null)
+            {
+                if (cliente.Activo)
+                {
+                    if (DevExpress.XtraEditors.XtraMessageBox.Show(this, "¿Estás seguro de eliminar al cliente " + cliente.Nombre + "?", this.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        if (cliente.Borrar())
+                        {
+                            cliente.Activo = false;
+                            cliente.Status = "Eliminado";
+                            //gridView1.DeleteRow(rowHandle);
+                            gridView1.RefreshData();
+                            return true;
+                        }
+                    }
+                }
+                else
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show(this, "El cliente " + cliente.Nombre + " ya ha sido dado de baja.", this.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            return false;
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (gridView1.SelectedRowsCount > 0)
+                {
+                    int rowHandle = gridView1.GetSelectedRows()[0];
+                    editarCliente(rowHandle);
+                }
+            }
+            else if (e.KeyCode == Keys.Delete)
+            {
+                if (gridView1.SelectedRowsCount > 0)
+                {
+                    int rowHandle = gridView1.GetSelectedRows()[0];
+                    eliminarCliente(rowHandle);
+                }
+            }
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            int index = Global.RowIndexClicked(gridView1);
+            if (index > -1)
+            {
+                editarCliente(index);
+            }
         }
     }
 }
