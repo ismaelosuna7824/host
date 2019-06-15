@@ -242,8 +242,6 @@ namespace RecyclameV2
                 Saldo = Convert.ToDouble(row["Saldo"]);
                 Monto_Credito = Convert.ToDouble(row["MontoCredito"]);
                 resultado = true;
-
-                resultado = true;
             }
             catch (Exception ex)
             {

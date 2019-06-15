@@ -36,7 +36,11 @@ namespace RecyclameV2.Clases
         public long IdDatosFiscales { get; set; }
         public string IdVentas { get; set; }
         public double UltimaCantidad { get; set; }
+        public bool Bascula { get; set; }
+        public bool AsignoPeso { get; set; }
+        public int TotalArticulos { get; set; }
         public double UltimaTara { get; set; }
+        public double Precio { get; set; }
         override public string CampoId { get { return "Id_Venta_Detalle"; } }
         override public string CampoBusqueda { get { return "Id_Venta"; } }
         protected override string QueryGrabar { get { return "Venta_Detalle_Grabar_sp"; } }
@@ -70,6 +74,10 @@ namespace RecyclameV2.Clases
             Importe = -1;
             ISR_PorCiento = -1;
             tipo = -1;
+            Bascula = false;
+            AsignoPeso = false;
+            TotalArticulos = 0;
+            Precio = 0;
         }
 
         public void setTipo(long tipo)
@@ -147,6 +155,8 @@ namespace RecyclameV2.Clases
                 Importe = Convert.ToDecimal(row["Importe"]);
                 Descuento_ISR = Convert.ToDouble(row["DescuentoPrecio"]);
                 ISR_PorCiento = Convert.ToDecimal(row["DescuentoPorCiento"]);
+                Bascula = Convert.ToBoolean(row["Bascula"]);
+                Precio = Convert.ToDouble(row["PrecioVenta"]);
                 if (row.Table.Columns.Contains("Tara"))
                 {
                     Tara = Convert.ToDouble(row["Tara"]);

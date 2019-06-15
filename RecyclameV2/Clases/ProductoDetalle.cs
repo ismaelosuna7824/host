@@ -19,12 +19,16 @@ namespace RecyclameV2.Clases
         public int Cantidad_Minima { get; set; }
         public int Cantidad_Maxima { get; set; }
         public String Codigo_de_Barras { get; set; }
+        public double Existencia { get; set; }
         public long IVA { get; set; }
         public long IEPS { get; set; }
         public double Precio_Mayoreo { get; set; }
         public double Cantidad_Mayoreo { get; set; }
         public double Precio_Compra { get; set; }
         public double Cantidad { get; set; }
+        public bool Bascula { get; set; }
+        public double Precio { get; set; }
+
         public ProductoDetalle()
         {
             //CampoId = "Id";
@@ -49,6 +53,9 @@ namespace RecyclameV2.Clases
             Cantidad_Mayoreo = 0;
             Precio_Compra = 0;
             Cantidad = 0;
+            Bascula = false;
+            Existencia = 0;
+            Precio = 0;
         }
 
         public void setQueryGrabar(string query)
@@ -108,6 +115,7 @@ namespace RecyclameV2.Clases
                 if (Columns.Contains("PrecioGeneral"))
                 {
                     Precio_General = Convert.ToDouble(row["PrecioGeneral"]);
+                    Precio = Convert.ToDouble(row["PrecioGeneral"]);
                 }
                 if (Columns.Contains("CantidadMinima"))
                 {
@@ -117,6 +125,7 @@ namespace RecyclameV2.Clases
                 {
                     Cantidad_Maxima = Convert.ToInt32(row["CantidadMaxima"]);
                 }
+                
                 //Codigo_de_Barras = Convert.ToString(row["CodigoBarra"]);
                 if (Columns.Contains("IVA"))
                 {
@@ -141,6 +150,11 @@ namespace RecyclameV2.Clases
                 if (Columns.Contains("Existencia"))
                 {
                     Cantidad = Convert.ToDouble(row["Existencia"]);
+                }
+                Existencia = Cantidad;
+                if (Columns.Contains("CantidadPrecio2"))
+                {
+                    Bascula = Convert.ToBoolean(row["Bascula"]);
                 }
                 resultado = true;
             }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using RecyclameV2.Clases;
+using RecyclameV2.Formularios;
 
 namespace RecyclameV2
 {
@@ -72,8 +73,8 @@ namespace RecyclameV2
 
         private void tileItemBascula_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
-            /*FrmBascula bascula = new FrmBascula();
-            bascula.ShowDialog();*/
+            FrmBascula bascula = new FrmBascula();
+            bascula.ShowDialog();
         }
     }
 }
