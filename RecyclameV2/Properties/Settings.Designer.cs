@@ -71,5 +71,77 @@ namespace RecyclameV2.Properties {
                 this["Usuario"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NombreUsuario {
+            get {
+                return ((string)(this["NombreUsuario"]));
+            }
+            set {
+                this["NombreUsuario"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NombreTienda {
+            get {
+                return ((string)(this["NombreTienda"]));
+            }
+            set {
+                this["NombreTienda"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NumeroCaja {
+            get {
+                return ((int)(this["NumeroCaja"]));
+            }
+            set {
+                this["NumeroCaja"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Version {
+            get {
+                return ((string)(this["Version"]));
+            }
+            set {
+                this["Version"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NumSerie {
+            get {
+                return ((bool)(this["NumSerie"]));
+            }
+            set {
+                this["NumSerie"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Lector {
+            get {
+                return ((bool)(this["Lector"]));
+            }
+            set {
+                this["Lector"] = value;
+            }
+        }
     }
 }
