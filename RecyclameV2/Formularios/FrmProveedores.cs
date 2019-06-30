@@ -24,13 +24,11 @@ namespace RecyclameV2
         {
             try
             {
-                        Provedor proveedor = obtieneDatosProveedor();
+                Provedor proveedor = obtieneDatosProveedor();
 
-                        proveedor.Grabar();
-                        DevExpress.XtraEditors.XtraMessageBox.Show(this, "El proveedor ha sido ingresado correctamente.", this.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarProveedor();
-
-                
+                proveedor.Grabar();
+                DevExpress.XtraEditors.XtraMessageBox.Show(this, "El proveedor ha sido ingresado correctamente.", this.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarProveedor();                
             }
             catch (Exception ex)
             {
@@ -170,6 +168,31 @@ namespace RecyclameV2
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine("BUSCAR Proveedores EXCEPTION: " + e.ToString());
+            }
+        }
+
+        private void txtBuscarProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            buscarProveedores(txtBuscarProveedor.Text);
+        }
+
+        private void tabClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string strTab = tabClientes.SelectedTab.Text;
+            switch (strTab)
+            {
+                case "Listado Proveedores":
+                    buscarProveedores(txtBuscarProveedor.Text);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void txtBuscarProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F4)
+            {
             }
         }
     }

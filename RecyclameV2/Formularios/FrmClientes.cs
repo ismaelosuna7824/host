@@ -42,7 +42,7 @@ namespace RecyclameV2
         {
             try
             {
-                if (txtNombres.Text == "" || txtApellidoP.Text == "" || txtRfc.Text == "")
+                if (txtNombres.Text == "" )
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show(this, "Por favor de llenar los campos requeridos", this.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

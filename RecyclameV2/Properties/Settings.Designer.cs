@@ -119,5 +119,29 @@ namespace RecyclameV2.Properties {
                 this["Version"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NumSerie {
+            get {
+                return ((bool)(this["NumSerie"]));
+            }
+            set {
+                this["NumSerie"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Lector {
+            get {
+                return ((bool)(this["Lector"]));
+            }
+            set {
+                this["Lector"] = value;
+            }
+        }
     }
 }

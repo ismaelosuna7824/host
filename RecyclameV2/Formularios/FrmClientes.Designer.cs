@@ -61,7 +61,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombres = new MetroFramework.Controls.MetroTextBox();
             this.txtApellidoP = new MetroFramework.Controls.MetroTextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtApellidoM = new MetroFramework.Controls.MetroTextBox();
             this.txtTelefono = new MetroFramework.Controls.MetroTextBox();
@@ -71,9 +70,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txtComentarios = new MetroFramework.Controls.MetroTextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.lblAlta = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnEiminarCliente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEditarCliente = new System.Windows.Forms.Button();
@@ -81,7 +79,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtBuscar = new MetroFramework.Controls.MetroTextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAlta = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -99,7 +98,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(972, 549);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -107,6 +106,8 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.lblAlta);
+            this.metroTabPage1.Controls.Add(this.label17);
             this.metroTabPage1.Controls.Add(this.groupControl2);
             this.metroTabPage1.Controls.Add(this.groupControl1);
             this.metroTabPage1.Controls.Add(this.BtnLimpiar);
@@ -114,8 +115,6 @@
             this.metroTabPage1.Controls.Add(this.label19);
             this.metroTabPage1.Controls.Add(this.txtComentarios);
             this.metroTabPage1.Controls.Add(this.label18);
-            this.metroTabPage1.Controls.Add(this.lblAlta);
-            this.metroTabPage1.Controls.Add(this.label17);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
@@ -153,7 +152,7 @@
             this.groupControl2.Controls.Add(this.txtCiudad);
             this.groupControl2.Controls.Add(this.txtColonia);
             this.groupControl2.Controls.Add(this.txtCodigoPostal);
-            this.groupControl2.Location = new System.Drawing.Point(453, 14);
+            this.groupControl2.Location = new System.Drawing.Point(453, 31);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(491, 331);
             this.groupControl2.TabIndex = 45;
@@ -599,14 +598,13 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.txtNombres);
             this.groupControl1.Controls.Add(this.txtApellidoP);
-            this.groupControl1.Controls.Add(this.label22);
             this.groupControl1.Controls.Add(this.label20);
             this.groupControl1.Controls.Add(this.txtApellidoM);
             this.groupControl1.Controls.Add(this.txtTelefono);
             this.groupControl1.Controls.Add(this.txtEmail);
-            this.groupControl1.Location = new System.Drawing.Point(28, 14);
+            this.groupControl1.Location = new System.Drawing.Point(3, 31);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(378, 217);
+            this.groupControl1.Size = new System.Drawing.Size(394, 217);
             this.groupControl1.TabIndex = 44;
             this.groupControl1.Text = "Datos Personales";
             // 
@@ -711,18 +709,6 @@
             this.txtApellidoP.UseSelectable = true;
             this.txtApellidoP.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtApellidoP.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(336, 63);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(15, 20);
-            this.label22.TabIndex = 41;
-            this.label22.Text = "*";
             // 
             // label20
             // 
@@ -864,7 +850,7 @@
             this.label19.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(764, 474);
+            this.label19.Location = new System.Drawing.Point(764, 491);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(166, 20);
             this.label19.TabIndex = 38;
@@ -886,7 +872,7 @@
             this.txtComentarios.CustomButton.UseSelectable = true;
             this.txtComentarios.CustomButton.Visible = false;
             this.txtComentarios.Lines = new string[0];
-            this.txtComentarios.Location = new System.Drawing.Point(548, 351);
+            this.txtComentarios.Location = new System.Drawing.Point(548, 368);
             this.txtComentarios.MaxLength = 250;
             this.txtComentarios.Name = "txtComentarios";
             this.txtComentarios.PasswordChar = '\0';
@@ -906,33 +892,11 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(431, 389);
+            this.label18.Location = new System.Drawing.Point(431, 406);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(103, 20);
             this.label18.TabIndex = 36;
             this.label18.Text = "Comentarios:";
-            // 
-            // lblAlta
-            // 
-            this.lblAlta.AutoSize = true;
-            this.lblAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlta.Location = new System.Drawing.Point(290, 271);
-            this.lblAlta.Name = "lblAlta";
-            this.lblAlta.Size = new System.Drawing.Size(89, 20);
-            this.lblAlta.TabIndex = 35;
-            this.lblAlta.Text = "dd/MM/yyyy";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(182, 271);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 20);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "Fecha Alta:";
             // 
             // metroTabPage2
             // 
@@ -954,6 +918,17 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(561, 468);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 24);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Eliminar";
             // 
             // btnEiminarCliente
             // 
@@ -1051,16 +1026,27 @@
             this.label23.TabIndex = 3;
             this.label23.Text = "Buscar Cliente:";
             // 
-            // label1
+            // lblAlta
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(561, 468);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 24);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Eliminar";
+            this.lblAlta.AutoSize = true;
+            this.lblAlta.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlta.Location = new System.Drawing.Point(842, 6);
+            this.lblAlta.Name = "lblAlta";
+            this.lblAlta.Size = new System.Drawing.Size(89, 20);
+            this.lblAlta.TabIndex = 47;
+            this.lblAlta.Text = "dd/MM/yyyy";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(734, 6);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(90, 20);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Fecha Alta:";
             // 
             // FrmClientes
             // 
@@ -1101,8 +1087,6 @@
         private MetroFramework.Controls.MetroTextBox txtRfc;
         private MetroFramework.Controls.MetroTextBox txtApellidoM;
         private MetroFramework.Controls.MetroTextBox txtApellidoP;
-        private System.Windows.Forms.Label lblAlta;
-        private System.Windows.Forms.Label label17;
         private MetroFramework.Controls.MetroTextBox txtPais;
         private MetroFramework.Controls.MetroTextBox txtEstado;
         private MetroFramework.Controls.MetroTextBox txtCiudad;
@@ -1114,7 +1098,6 @@
         private MetroFramework.Controls.MetroTextBox txtCalle;
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private MetroFramework.Controls.MetroTextBox txtComentarios;
@@ -1145,5 +1128,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEiminarCliente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAlta;
+        private System.Windows.Forms.Label label17;
     }
 }

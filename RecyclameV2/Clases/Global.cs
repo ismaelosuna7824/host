@@ -26,6 +26,13 @@ namespace RecyclameV2.Clases
         {
             public static string EJECUTANDO = "WM_EJECUTANDO";
         }
+        public static bool AgregarNumeroSerie
+        {
+            get
+            {
+                return Properties.Settings.Default.NumSerie;
+            }
+        }
         private static readonly string clientID = "966254033375-9vfh3bja168517plbgcqclve50637rhg.apps.googleusercontent.com";
         private static readonly string clientSecret = "PnlMASvaYAKoyK18eRMtGyoC";
         private static readonly string redirectURL = "urn:ietf:wg:oauth:2.0:oob";
@@ -69,6 +76,14 @@ namespace RecyclameV2.Clases
             get
             {
                 return Properties.Settings.Default.CadenaConexion;
+            }
+        }
+
+        public static bool InicioLector
+        {
+            get
+            {
+                return Properties.Settings.Default.Lector;
             }
         }
 
